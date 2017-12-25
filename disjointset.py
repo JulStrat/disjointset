@@ -97,7 +97,7 @@ class  DisjointWeightedSet(DisjointSet):
         return(True)
 
     def weight(self, x):
-        return(self._weight[self.root(x)])    
+        return(self._weight[self.find(x)])    
 
 class  DisjointRankedSet(DisjointSet):
 
@@ -127,7 +127,7 @@ class  DisjointRankedSet(DisjointSet):
         return(True)
 
     def rank(self, x):
-        return(self._rank[self.root(x)])    
+        return(self._rank[self.find(x)])    
 
 
 if __name__ == 'builtins':
