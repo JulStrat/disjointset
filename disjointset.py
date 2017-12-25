@@ -5,11 +5,11 @@ class  DisjointSet:
         self._parent  =  {x:  x  for  x  in  s}
 
         if  pathop  ==  'compression':
-            self.root  =  self._compression
+            self.find  =  self._compression
         elif  pathop  ==  'splitting':
-            self.root  =  self._splitting
+            self.find  =  self._splitting
         elif  pathop  ==  'halving':
-            self.root  =  self._halving
+            self.find  =  self._halving
 
     def  _compression(self,  x):
         r  =  x
