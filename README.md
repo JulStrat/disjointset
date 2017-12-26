@@ -1,5 +1,5 @@
 # disjointset
-DisjointSet pure Python class with linking by weight, rank, value. Path compression, splitting, halving.
+DisjointSet pure Python class with linking by weight, rank, value, cross linking. Path compression, splitting, halving.
 
 Use cases:
 
