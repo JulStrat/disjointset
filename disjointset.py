@@ -129,6 +129,20 @@ class  DisjointRankedSet(DisjointSet):
     def rank(self, x):
         return(self._rank[self.find(x)])    
 
+class  DisjointCrossedSet(DisjointSet):     
+
+    def join(self, x, y):
+        while self._parent[x] != self._parent[y]:
+            if self._parent[x] < self._parent[y]:
+                x, y = y, x
+            if y == self._parent[y]:
+                self._parent[y] = self._parent[x]
+                self._root.remove(y)
+                return(True)
+            t = self._parent[y]
+            self._parent[y] = self._parent[x]
+            y = t
+        return(False)    
 
 if __name__ == 'builtins':
     import  networkx  as  nx
