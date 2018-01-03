@@ -9,6 +9,8 @@ http://www.spoj.com/problems/FOXLINGS/
 
 http://www.spoj.com/problems/FRNDCIRC/
 
+http://www.spoj.com/problems/IAPCR2F/
+
 http://www.spoj.com/problems/MST/
 
 http://www.spoj.com/problems/CSTREET/
