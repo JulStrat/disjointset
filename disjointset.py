@@ -19,56 +19,56 @@ class  DisjointSet:
             p  =  self._parent[x]
             self._parent[x]  =  r
             x  =  p
-        return(x)
+        return x
 
     def  _splitting(self,  x):
         while  x  !=  self._parent[x]:
             p  =  self._parent[x]
             self._parent[x]  =  self._parent[p]
             x  =  p
-        return(x)
+        return x
 
     def  _halving(self,  x):
         while  x  !=  self._parent[x]:
             p  =  self._parent[x]
             self._parent[x]  =  self._parent[p]
             x  =  self._parent[x]
-        return(x)
+        return x
 
     def  find(self,  x):
         while  x  !=  self._parent[x]:
             x  =  self._parent[x]
-        return(x)
+        return x
 
     def  root_set(self):
-        return(self._root.copy())
+        return (self._root.copy())
 
     def  make_set(self,  x):
         if  x  not  in  self._parent:
             self._parent[x]  =  x
             self._root.add(x)
-            return(True)
+            return True
         else:
-            return(False)
+            return False
 
     def  joined(self,  x,  y):
-        return(self.find(x)  ==  self.find(y))
+        return (self.find(x)  ==  self.find(y))
 
     def  join(self,  x,  y):
         rx,  ry  =  self.find(x),  self.find(y)
         if  rx  ==  ry:
-            return(False)
+            return False
         if  self._parent[rx]  <  self._parent[ry]:
             rx,  ry  =  ry,  rx
         self._parent[ry]  =  rx
         self._root.remove(ry)
-        return(True)
+        return True
 
     def  size(self):
-        return(len(self._root))
+        return len(self._root)
 
     def  __len__(self):
-        return(len(self._parent))
+        return len(self._parent)
 
 class  DisjointWeightedSet(DisjointSet):
 
@@ -81,23 +81,23 @@ class  DisjointWeightedSet(DisjointSet):
             self._parent[x]  =  x
             self._weight[x]  =  1            
             self._root.add(x)
-            return(True)
+            return True
         else:
-            return(False)
+            return False
 
     def  join(self,  x,  y):
         rx,  ry  =  self.find(x),  self.find(y)
         if  rx  ==  ry:
-            return(False)
+            return False
         if  self._weight[rx]  <  self._weight[ry]:
             rx,  ry  =  ry,  rx
         self._parent[ry]  =  rx
         self._weight[rx]  +=  self._weight[ry]
         self._root.remove(ry)
-        return(True)
+        return True
 
     def weight(self, x):
-        return(self._weight[self.find(x)])    
+        return self._weight[self.find(x)]
 
 class  DisjointRankedSet(DisjointSet):
 
@@ -110,24 +110,24 @@ class  DisjointRankedSet(DisjointSet):
             self._parent[x]  =  x
             self._rank[x]  =  0            
             self._root.add(x)
-            return(True)
+            return True
         else:
-            return(False)
+            return False
         
     def  join(self,  x,  y):
         rx,  ry  =  self.find(x),  self.find(y)
         if  rx  ==  ry:
-            return(False)
+            return False
         if  self._rank[rx]  ==  self._rank[ry]:
             self._rank[rx]  +=  1
         elif  self._rank[rx]  <  self._rank[ry]:
             rx,  ry  =  ry,  rx
         self._parent[ry]  =  rx
         self._root.remove(ry)
-        return(True)
+        return True
 
     def rank(self, x):
-        return(self._rank[self.find(x)])    
+        return self._rank[self.find(x)]
 
 class  DisjointCrossedSet(DisjointSet):     
 
@@ -138,11 +138,11 @@ class  DisjointCrossedSet(DisjointSet):
             if y == self._parent[y]:
                 self._parent[y] = self._parent[x]
                 self._root.remove(y)
-                return(True)
+                return True
             t = self._parent[y]
             self._parent[y] = self._parent[x]
             y = t
-        return(False)    
+        return False
 
 if __name__ == 'builtins':
     import  networkx  as  nx
