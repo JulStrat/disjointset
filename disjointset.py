@@ -2,7 +2,7 @@ class  DisjointSet:
 
     def  __init__(self,  s,  pathop=None):
         self._root  =  set(s)
-        self._parent  =  {x:  x  for  x  in  s}
+        self._parent  =  dict(zip(s, s))
 
         if  pathop  ==  'compression':
             self.find  =  self._compression
@@ -74,7 +74,7 @@ class  DisjointWeightedSet(DisjointSet):
 
     def  __init__(self,  s,  pathop=None):
         DisjointSet.__init__(self,  s,  pathop)
-        self._weight  =  {x:  1  for  x  in  s}
+        self._weight  =  dict.fromkeys(s, 1)
 
     def  make_set(self,  x):
         if  x  not  in  self._parent:
@@ -103,7 +103,7 @@ class  DisjointRankedSet(DisjointSet):
 
     def  __init__(self,  s,  pathop=None):
         DisjointSet.__init__(self,  s,  pathop)
-        self._rank  =  {x:  0  for  x  in  s}
+        self._rank  =  dict.fromkeys(s, 0)
         
     def  make_set(self,  x):
         if  x  not  in  self._parent:
