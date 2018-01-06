@@ -41,7 +41,7 @@ class  DisjointSet:
         return x
 
     def  root_set(self):
-        return (self._root.copy())
+        return self._root.copy()
 
     def  make_set(self,  x):
         if  x  not  in  self._parent:
