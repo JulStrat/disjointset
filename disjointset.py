@@ -64,6 +64,12 @@ class  DisjointSet:
         self._root.remove(ry)
         return True
 
+    def clear(self):
+        self._root = set()
+        for x in self._parent:
+              self._parent[x] = x
+              self._root.add(x)
+
     def  size(self):
         return len(self._root)
 
@@ -99,6 +105,11 @@ class  DisjointWeightedSet(DisjointSet):
     def weight(self, x):
         return self._weight[self.find(x)]
 
+    def clear(self):
+        DisjointSet.clear(self)
+        for x in self._parent:
+              self._weight[x] = 1
+
 class  DisjointRankedSet(DisjointSet):
 
     def  __init__(self,  s,  pathop=None):
@@ -128,6 +139,11 @@ class  DisjointRankedSet(DisjointSet):
 
     def rank(self, x):
         return self._rank[self.find(x)]
+
+    def clear(self):
+        DisjointSet.clear(self)
+        for x in self._parent:
+              self._rank[x] = 0
 
 class  DisjointCrossedSet(DisjointSet):     
 
