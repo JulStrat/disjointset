@@ -21,6 +21,8 @@ http://www.spoj.com/problems/HERDING/
 
 http://www.spoj.com/problems/ADABANKET/
 
+http://www.spoj.com/problems/IITWPC4I/
+
 https://www.hackerrank.com/challenges/merging-communities/problem
 
 https://www.hackerrank.com/challenges/components-in-graph/problem
