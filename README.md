@@ -3,6 +3,8 @@ DisjointSet pure Python class with linking by weight, rank, value, cross linking
 
 Use cases:
 
+http://www.spoj.com/problems/SOCNETC/
+
 http://www.spoj.com/problems/PT07Y/
 
 http://www.spoj.com/problems/FOXLINGS/
