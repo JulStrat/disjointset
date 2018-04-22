@@ -1,3 +1,5 @@
+from random import shuffle
+
 class  UnionFind:
 
     def  __init__(self,  n,  pathop=None):
@@ -117,6 +119,24 @@ class  UnionFindCrossed(UnionFind):
             self._parent[y] = self._parent[x]
             y = t
         return False
+
+class  UnionFindRandomized(UnionFind):
+
+    def  __init__(self,  n,  pathop=None):
+        UnionFind.__init__(self,  n,  pathop)
+        self._rrank = list(range(n))
+        shuffle(self._rrank)
+
+    def  union(self,  x,  y):
+        rx,  ry  =  self.find(x),  self.find(y)
+        if  rx  ==  ry:
+            return False
+        if  self._rrank[rx]  <  self._rrank[ry]:
+            rx,  ry  =  ry,  rx
+        self._parent[ry]  =  rx
+        self._root.remove(ry)
+        return True
+            
 
 if __name__ == 'builtins':
     import  networkx  as  nx
