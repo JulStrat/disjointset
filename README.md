@@ -1,7 +1,11 @@
 # disjointset
-DisjointSet pure Python class with linking by weight, rank, value, cross linking. Path compression, splitting, halving.
+DisjointSet and [UnionFind][1] pure Python classes with linking by weight, rank, value, cross, random linking. Path compression, splitting, halving.
+
+[1]: https://algs4.cs.princeton.edu/15uf/
 
 Use cases:
+
+http://www.spoj.com/problems/SOCNETC/
 
 http://www.spoj.com/problems/PT07Y/
 
@@ -20,6 +24,8 @@ http://www.spoj.com/problems/BLINNET/
 http://www.spoj.com/problems/HERDING/
 
 http://www.spoj.com/problems/ADABANKET/
+
+http://www.spoj.com/problems/IITWPC4I/
 
 https://www.hackerrank.com/challenges/merging-communities/problem
 
